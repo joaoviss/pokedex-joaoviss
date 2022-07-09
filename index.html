@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokedex</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png" type="image/png">
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="dex-title">pokedex</h1>
+        <ul id="card-container" class="card-container"></ul>
+    </main>
+    <div id="black-box" class="black-box off"></div>
+    
+    <!-- templates -->
+    <template id="card-template">
+        <li class="card ${type}" id="${id}">
+            <figure class="img-box">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name}" class="card-img">
+            </figure>
+            <h2 class="card-title">${id}. ${name}</h2>
+            <p class="card-subtitle">${types}</p>
+        </li>
+    </template>
+    <template id="details-template">
+        <div id="details" class="details">
+            <h1 id="details-title" class="details-title">details of ${name}: The ${type} pokemon</h1>
+            <div id="close-btn" class="close-btn">x</div>
+            <div id="content" class="content ${type}">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg" alt="${name}" class="detail-img">
+                <span>
+                    <ul class="info">
+                        <li><b>Types:</b> ${types}</li>
+                        <li><b>Moves:</b> ${moves}</li>
+                        <li><b>Available in:</b> ${game_indices}</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </template>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
